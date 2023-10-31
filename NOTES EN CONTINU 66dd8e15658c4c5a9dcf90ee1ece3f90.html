@@ -1,0 +1,691 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>NOTES EN CONTINU</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="66dd8e15-658c-4c5a-9dcf-90ee1ece3f90" class="page serif"><header><h1 class="page-title">NOTES EN CONTINU</h1><p class="page-description"></p></header><div class="page-body"><ul id="48ed2df8-b978-4dbc-8c2c-aaea42fc01e0" class="toggle"><li><details open=""><summary><em><em><em>Préface</em></em></em></summary><div><p id="ac843780-34d8-41a3-b703-a9cb18a0ede0" class=""><em><em><em><em><em><em><em>→ </em></em></em></em></em></em></em>Long XIIIe siècle (1180-1328),<div class="indented"><ul id="acb63199-d9d4-43b5-b577-c68dfaba8e61" class="bulleted-list"><li style="list-style-type:disc"> émergence d’un Etat et d’un territoire structuré sur le modèle de l’Eglise (”un corps mystique dont le Christ est la tête” → “Chacun fait par nature partie d’une communauté sociale, de telle sorte qu’il est aussi membre d’un corps mystique”, Godefroid de Fontaines). </li></ul><ul id="ccf5ed78-388d-4982-8ca9-8eae0cac151b" class="bulleted-list"><li style="list-style-type:disc">Féodalité → Royauté (ex : proposition du <em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em>De Regimine principum</em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em>, 1279, Gilles de Rome)</li></ul></div></p><p id="a0bad800-cf4f-4ff5-89d7-ebd3b73f19b4" class="">→ Livre insiste sur détermination économique favorisée par contexte féodal (prospérité agricole, dynamique artisanale et commerciale); cathédrales comme manifestation du pouvoir royal (gothique) et de la prospérité (Saint-Louis reflet de ce bonheur redécouvert)</p><p id="41d85e3f-3a33-4208-9d4c-1bceec4b2b6c" class="">→ <em><em><em><em><em><em><em><em><em><em><em><em><em><em><em>aggoiornamento </em></em></em></em></em></em></em></em></em></em></em></em></em></em></em>de l’Eglise; ordres nouveaux, confréries, cadres de dévotion et d’entraide.</p><p id="bd6c74da-22c1-4d44-8663-fd3392d0811a" class="">→ Crise à la fin du XIIIe : limite du sys. féodal, accélér° du pv royal (besoin d’ennemi = Flandre, Aquitaine, Pape, hérétiques, templiers, sorciers).</p></div></details></li></ul><ul id="30b4ba32-40d2-4884-bb80-68dc95e07fee" class="toggle"><li><details open=""><summary><em><em><em><em><em><em><em><em><em><em><em><em>Introduction</em></em></em></em></em></em></em></em></em></em></em></em></summary><p id="d5a1ba93-3eaa-4517-8d35-59905f39ee45" class="">
+</p></details></li></ul><p id="3fc5421a-07fa-43c6-b4e4-910351bb2730" class="">→ “France capétienne” = anachronique.</p><ul id="c75ada78-bb0f-4ea2-8a7a-23f6e106e757" class="bulleted-list"><li style="list-style-type:disc">Midi → Aragaon</li></ul><ul id="55c50935-acb4-42fa-b891-9cae8a9d7e84" class="bulleted-list"><li style="list-style-type:disc">Empire a une influence sur une large bande de comtés</li></ul><ul id="15882fe2-cac0-4bc3-ae7e-c453ca0312e0" class="bulleted-list"><li style="list-style-type:disc">Flandre dynamique en relation avec l’Italie des communes (industrie du drap dépend des importations anglaise et picarde)</li></ul><p id="140748a2-215c-4c53-a0c4-d06a7d9a286e" class="">Les seuls français sont les habitants du domaine de paris</p><p id="e461e50d-894f-4398-ba06-2e8a68aa6b9c" class="">
+</p><ul id="46c5b69e-2d07-4681-a90b-da90acbbdaa4" class="toggle"><li><details open=""><summary><strong><strong><strong><strong><strong><strong><strong><strong>I. Temps nouveaux : le règne de Philippe Auguste (1180-1223)</strong></strong></strong></strong></strong></strong></strong></strong></summary><figure id="6dcfd3e8-90c4-47a5-8758-19abb1b2e406" class="image"><a href="NOTES%20EN%20CONTINU%2066dd8e15658c4c5a9dcf90ee1ece3f90/Untitled.png"><img style="width:800px" src="NOTES%20EN%20CONTINU%2066dd8e15658c4c5a9dcf90ee1ece3f90/Untitled.png"/></a></figure><p id="ed06486f-edeb-446a-a114-96609430918d" class="">→ Gothique = prospérité = Philippe Auguste (fin Laon, Paris; début : Chartres, Bourges, Soissons, Rouen etc.) : se couvre d’un “blanc manteau d’églises”. Dvp agricole, monétaire, commercial. Chgmts politiques (monarchie féodale vers administrative avec capitale); dynamisme du Nord favorise poussée Ouest et Sud.</p><p id="40d7ee29-dc8e-4ce3-b709-0a1f5934e46e" class="">→ Nouvelle titulature : <em><em><em><em><em><em><em><em><em><em><em><em><em><em>rex francorum </em></em></em></em></em></em></em></em></em></em></em></em></em></em>→ <em><em><em><em><em><em><em><em><em><em><em><em>rex francia </em></em></em></em></em></em></em></em></em></em></em></em>(1204); éclat lors de Bouvines (1214)</p><ul id="32914e53-6abd-4473-8e12-84f1e37e42f0" class="toggle"><li><details open=""><summary><strong>Héritage</strong></summary><p id="114c8114-f0af-41b5-b1b4-f74426ed6f0d" class="">→ Naissance<mark class="highlight-red"> Philippe II </mark>: <mark class="highlight-pink">1165</mark>, Gonesse “Dieudonné”; premier fils de <mark class="highlight-red">Louis VII</mark> (échec avec Aliénor d’Aquitaine, Constance Castille 1154, <mark class="highlight-red">Adèle de Champagne</mark> <mark class="highlight-default">1160 </mark>qui accouche)</p><p id="407d9ab5-aa0e-443e-9bff-819a0d67c985" class="">→ Louis VII : </p><ul id="7a53ee32-5a99-4eef-a5bf-53ac8b7615c2" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">constr° état en s’appuyant sur système féodal;</span> tt baron dépend du roi (<mark class="highlight-blue">théorie de Suger</mark>, abbé de Saint-Denis, de la pyramide vassalique)</li></ul><ul id="68e3dbef-d27d-4e30-b4cd-48653e2f86dd" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">intervient en dehors du domaine</span> <mark class="highlight-gray_background">: Bourgogne, Centre, Midi</mark> (hommage du compte de Toulouse, père de Raymond V qui épouse la soeur de L7 Constance); ordonnance de paix de <mark class="highlight-pink">1155 </mark>à Soissons.</li></ul><ul id="cfe29410-9b4d-4e8b-82a6-3ecc4988e6cf" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">Auréole religieuse</span>, partic° à la croisade. Contrôle 20aine d’évêchés “royaux”</li></ul><p id="1fbebee8-cf5a-4922-8009-35d1d334716c" class="">→ Laisse contentieux : conflit avec Plantagenêt; <mark class="highlight-gray_background">Flandre+Champagne </mark>tendent à autonomie et ctrl du pv royal.</p></details></li></ul><ul id="5fbdca80-ef23-4dae-85b7-9d6caa16decf" class="toggle"><li><details open=""><summary><strong><strong><strong>Une décennie difficile (1180-1190)</strong></strong></strong></summary><p id="87c02ca4-22ef-449b-b0ea-19ebc902fbfe" class="">→ Champagne (<mark class="highlight-red">reine Adèle</mark>) domine; mariage avec <mark class="highlight-red">Isabelle de Hainaut</mark> (nièce) pour contrebalancer avec dot=comté d’Artois. Champenois vont alors vers Henri II Plantegenêt; <mark class="highlight-purple">traité de Gisros </mark>(<mark class="highlight-pink">juin 1180)</mark> <span style="border-bottom:0.05em solid">renouvelle la paix France Angleterre</span>.</p><p id="131acbd9-3292-413c-add6-3d6aad7a7f51" class="">→ Accord permet à <span style="border-bottom:0.05em solid">P2 de faire front à coal°</span> :<mark class="highlight-gray_background"> Flandre, Hainaut; comtes Champagne, Chartres, Blois, Sancerre, duc de Bourgogne</mark><mark class="highlight-orange_background">; </mark>
+guerre médiévale = mort paysan, ravage de terres; 
+expulsion des juifs et saisie pour financer la guerre (31500fr). 
+Disloc° par <mark class="highlight-purple">traité de Boves</mark> (<mark class="highlight-pink">1185</mark>) : expectative de l<mark class="highlight-gray_background">’Artois, Vermandois et Amien</mark>s (<mark class="highlight-blue"><span style="border-bottom:0.05em solid">Rigord </span></mark><span style="border-bottom:0.05em solid">fait de P2 Auguste</span>)</p><p id="b14653a5-6c45-44a4-9cf8-5218433e9a4c" class="">→ <mark class="highlight-yellow">Mouvement populaire </mark>de <mark class="highlight-pink">1182-1183</mark>; préfigure <mark class="highlight-yellow">Pastoureaux</mark> (1212, 1251,1320) : révolte contre la guerre et les routiers (employés pour la guerre qui deviennent brigands; en réaction s’organisent les “encapuchonnés” en Puy-en-Velay etc. ex : massacre de cottereaux en Bourbonnais, juillet 1183); problème car milices de paix se muent svt en mvmt anti-féodal (ex : <mark class="highlight-blue">Robert, moine de Saint-Marien d’Auxerre</mark>, <em><em><em><em><em><em><em>Chroniques</em></em></em></em></em></em></em>); répression parfois par les cotereaux eux-même (brutal : Gascon louvart, Mercadier en Auvergne…). Mouvement de paix et levée d’une armée d’ordre répressive.</p><ul id="7076416a-4681-49d8-9838-2099640ce916" class="toggle"><li><details open=""><summary>Montée en puissance du Plantagenêt</summary><figure id="2951b02b-9160-4af8-aa1b-0ca98df8ef4f" class="image"><a href="NOTES%20EN%20CONTINU%2066dd8e15658c4c5a9dcf90ee1ece3f90/Untitled%201.png"><img style="width:800px" src="NOTES%20EN%20CONTINU%2066dd8e15658c4c5a9dcf90ee1ece3f90/Untitled%201.png"/></a></figure><p id="f62b996e-0be1-4f63-b9b6-6f9b82066088" class="">→ Montée en puissance des Plantagenêts :
+</p><ul id="cbcdadcb-08fb-4796-abed-36e83c9ceba3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink">1128 </mark>: <mark class="highlight-red">Geoffrey Plantegenêt</mark> épouse Mathilde fille du roi Henri Ier Beauclerc (royaume d’outre-manche et duché de Normandie)</li></ul><ul id="d836fc24-1eaf-4e11-87e3-88840a441966" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink">1152 </mark>: <mark class="highlight-red">Henri </mark>(fils de Geoffroy+Mathilde) mariage avec <mark class="highlight-red">Aliénor d’Aquitaine</mark> (comtes de Poitiers)</li></ul><ul id="7ffb23fb-600e-4807-ac0b-648839561681" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><mark class="highlight-pink">1154 </mark></span>: Henri reconnu roi d’Angleterre, conquête de l’Irlande, contrôle de la Bretagne et augm° de l’autorité dans le charentais (sauf Limousin)</li></ul></details></li></ul><p id="1711d518-0f02-48ad-8d2a-fe861e4556bd" class="">→ Pouvoir bcp plus grand que le seigneur : <span style="border-bottom:0.05em solid">administration plus moderne</span> (législation avec codes de loi/assises, quadrillage admin…; général° du sys. normand perfectionnés en Angleterre après 1066); raffinement culturel (<mark class="highlight-blue">Jean de Salisbury</mark>, <em><em><em><em><em><em><em><em><em><em><em>Polycratius</em></em></em></em></em></em></em></em></em></em></em>); système de cours perfectionné, ctrl des unions matrimoniales</p><p id="52a6ca51-de81-44f0-9584-2d55fd3e888e" class="">→ <span style="border-bottom:0.05em solid">Attaque en</span><span style="border-bottom:0.05em solid"><mark class="highlight-pink"> 1187</mark></span> sur le Vexin et le Berry; fils d’Aliénor d’Aquitaine : <mark class="highlight-red">Richard </mark>(abandonne plus tard son père pour la Normandie), <mark class="highlight-red">Geoffroy </mark>(comte de Bretagne), <mark class="highlight-red">Jean</mark>. Fuite de Henri II à Ballon près de Tours et meurt, Richard hérite de ses prérogatives. 
+- Paix avec médiation Flandres et Champagne car<mark class="highlight-yellow"> prise de Jérusalem par Saladin</mark>, paix universelle préalable à une nv. croisade (Richard prend la croix à Tours en 1187, doit aller en Angleterre se faire couronner; puis Henri II et Philippe qui reçoit bourdon+escarcelle en 1190)<div class="indented"><p id="49e65ef1-b423-4b03-bb69-0a1dd005d5c7" class="">→ Taxe pour frais d’expéd° : “dîme saladine” (10% sur meubles et revenus des non croisés =énorme) mais annulé</p></div></p><p id="bfae2f27-bdde-40cf-8b28-2e350b921323" class="">
+</p></details></li></ul><ul id="2bb63801-3853-44a4-b304-c28dc3d46220" class="toggle"><li><details open=""><summary><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>La première constitution écrite</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></summary><p id="6c70b945-9403-4298-bb3c-bca0e22a8cfb" class="">→ <span style="border-bottom:0.05em solid"><mark class="highlight-purple">“Testament de Philippe Auguste”</mark></span><span style="border-bottom:0.05em solid">=1ère ordonnance valable pour tt le royaume, centralise autour de Paris</span></p><ol type="1" id="f6d48f7d-6708-4ff7-a30c-063f41a7d39b" class="numbered-list" start="1"><li>Légitimation de la monarchie et de l’Etat</li></ol><ol type="1" id="f1f528ac-53ce-4038-be50-2d3cf694bc06" class="numbered-list" start="2"><li><mark class="highlight-teal_background">Organisation du royaume pendant voyage en Terre Sainte </mark>(régence : Isabelle → Adèle de Champagne + frère: Guillaume aux Blanches Mains)</li></ol><ol type="1" id="dfe3ffe9-ea4c-4b1f-83b9-5d985a72e8f8" class="numbered-list" start="3"><li><mark class="highlight-teal_background">Nouveauté= le bailli</mark> (rend justice aux assises/mois; ctrl prévôts; choisi conseiller du prévôt, en rend compte/3xans; versement des revenus)</li></ol><ol type="1" id="a05f4a22-046b-42e6-bef6-04f514b75720" class="numbered-list" start="4"><li><mark class="highlight-teal_background">Haute cours de justice (trimestrielle</mark>) sur tt le royaume</li></ol><p id="ae989f93-8fa8-4a91-be3e-90c1213ee8ad" class="">→ Parallèle à ext° du champ d’influence :</p><ol type="1" id="e015e061-3ae3-4ff1-a844-93860bbaae56" class="numbered-list" start="1"><li>Par l’accord de la <span style="border-bottom:0.05em solid"><mark class="highlight-teal_background">sauvegarde</mark></span><span style="border-bottom:0.05em solid"> </span>(protection royale)</li></ol><ol type="1" id="d4474a01-71dd-4387-b2aa-34fe05a30361" class="numbered-list" start="2"><li>Par le <span style="border-bottom:0.05em solid"><mark class="highlight-teal_background">paréage </mark></span>: association avec petits seigneurs donc partage gestion et revenu d’un territoire.</li></ol><ol type="1" id="9d36e24a-0e8b-4662-bf1e-dbd7e3bae731" class="numbered-list" start="3"><li>Par les <mark class="highlight-teal_background"><span style="border-bottom:0.05em solid">chartes de communes</span></mark> (comme <mark class="highlight-red">Louis VII </mark>: <mark class="highlight-gray_background">Laon, Soissons, Noyons… Commune à Reims, Compiègne</mark>…; permet de faire pièce au pouvoir des seigneurs et des prélats); ville sous patronage de la couronne. <mark class="highlight-red">Philippe Auguste </mark>:<mark class="highlight-pink_background"> 1180-1190: 28 chartes;</mark> avantages militaires, liens politiques.</li></ol></details></li></ul><ul id="15b5f5e4-313d-4886-a395-503a48176b91" class="toggle"><li><details open=""><summary><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Fleur de lis contre léopards : le printemps de l’Etat monarchique</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></summary><p id="6604aeef-411c-4f39-836c-cf8f5677cccb" class="">→ Rencontre roi d’A et roi de F à Vézelay (prédication de <mark class="highlight-red">Saint-Bernard</mark> en <mark class="highlight-pink">1146</mark>); suspension des rivalités.</p><p id="9884ab80-2251-46ed-915a-cff4a3d7e181" class="">→ Difficultés de navigation pour r. des Fr; séjour à la cour du roi <mark class="highlight-red">Tancrède</mark>; <mark class="highlight-red">Richard </mark>escale à <span style="border-bottom:0.05em solid">Chypre pour chasser un usurpateur</span></p><p id="83455548-8bf6-4df6-89dd-d7f0070f62d8" class="">→<mark class="highlight-yellow"> Siège d’Acre</mark> en <mark class="highlight-red">1191</mark>, Philippe arrive devant ville déjà assiégée et impose unité de commandement, puis Richard qui fait concurrence. Maladie de lui+maladie L8+ombrage de Richard= retour de Philippe. Bcp de morts de féodaux partis par le climat et la fièvre (frères de Champagne, comte de Flandre : Philippe d’Alsace; → extension au Nord avec <span style="border-bottom:0.05em solid">mort d’Isabelle de Hainaut</span>)</p><p id="ca1676f8-5878-4f84-8640-35936a65d10a" class="">Problèmes :</p><ul id="0b9d816e-e875-46e7-818a-772052dc3ff1" class="bulleted-list"><li style="list-style-type:disc">Epouse <mark class="highlight-red">Ingeburge de Danemark</mark> pour s’assurer une descendance mais la répudie et sép° assurée par Guillaume aux Blanches Mains; problème avec le pape qui le considère bigame (mariage avec <mark class="highlight-red">Agnès de Méranie</mark> qui meurt en couche ce qui lui permet de rappeler Ingeburge).</li></ul><p id="9b298466-6955-42e6-9b77-91b1b37c8ad8" class="">→ Retour de <mark class="highlight-red">Richard </mark>en <mark class="highlight-pink">1192</mark>, capturé par <mark class="highlight-red">duc d’Autriche</mark>; pendant ce tmp <mark class="highlight-red">Philippe </mark>s’est emparé de Normandie, Vexin, Evreux, Touraine en traitant avec <mark class="highlight-red">Jean.</mark> 
+Succession de petites guerres, dans le Vexin, en Normandie, et dans le Berry sans gain territorial conséquent; édification de Chateau-Gaillard pour protéger Rouen. Philippe subit défaites  et demande <span style="border-bottom:0.05em solid"><mark class="highlight-purple">média° légat Pierre de Capoue</mark></span><mark class="highlight-purple"> </mark>:</p><ul id="27df7512-a72f-4225-b540-84ac8afa8cd2" class="bulleted-list"><li style="list-style-type:disc">Trève de 5 ans</li></ul><ul id="784a90b3-68b9-48e7-90f9-03c6ae06a48c" class="bulleted-list"><li style="list-style-type:disc">Renonce à tout du Vexin et de Normandie sauf Gisors; cède droit sur archevêché de Tours</li></ul><ul id="9a3359a8-174f-4af1-980a-c0e78a5ea319" class="bulleted-list"><li style="list-style-type:disc">Louis doit épouser Blanche de Castille (nièce du roi d’angleterre)</li></ul><ul id="e043b312-cfa7-44d6-9639-0ca57d854372" class="bulleted-list"><li style="list-style-type:disc">Aide Otton de Brunswick à avoir la couronne impériale</li></ul><p id="b15d09c6-ffdf-42e6-999a-5ff5f39caf52" class="">→ Richard tente d’attirer Jean  + guerre avec ses seigneurs (<mark class="highlight-red">Adémar V</mark>, Limousin) et meurt au combat (gangrène) : hériter=<mark class="highlight-red">Jean </mark>(frère) + <mark class="highlight-red">Arthur </mark>(neveu). Appui de Philippe pour Arthur puis <mark class="highlight-purple">traité du Goulet</mark> (<mark class="highlight-pink">1200</mark>) reconnaît Jean (+relief 20K marcs; <mark class="highlight-brown_background">hommage lige</mark> du nv comte de Flandre Ferrand de Portugal).</p><figure class="block-color-red callout" style="white-space:pre-wrap;display:flex" id="c450558d-e026-44d4-9ad8-d814db72dbc9"><div style="font-size:1.5em"><span class="icon">📖</span></div><div style="width:100%"><mark class="highlight-brown_background">Hommage lige</mark><strong><mark class="highlight-default">
+</mark></strong><mark class="highlight-default">L’hommage lige lie le vassal au suzerain d’un lien d’obligation plus étroit que l’homme ordinaire; il est le plus souvent oral. Sys.pyramidal de PA, seulement grd seigneurs le prête mais pb en cas de conflit → existence d’un hommage lige propritaire.</mark></div></figure><p id="47b9034a-5ca6-4e3a-8766-daafcc28691e" class="">→ Période 1190-1200 : défavorable pour roi de France, mais révolution administrative avec croisade= usage rationnel de la mémoire écrite.
+(<em><em><em><em><em><em><em><em><em><em><em>Philippide, </em></em></em></em></em></em></em></em></em></em></em>Guillaume le Breton raconte vol des archives; 28(1194)//566 après aux Chartes;
+Registres bcp plus fréquents )</p><p id="9a079819-f199-47d8-91be-1bc463acea69" class="">→ Offices de cour confiés à hommes nouveaux (jeune, modeste; ex : Gautier le Jeune); décentr° justice par les baillis, développement de la procédure inquisitoire. Struct° du domaine royal permet de tirer profit de disp° de Richard.</p><p id="e04105d5-27d3-46d6-a68f-9741aaa0408d" class="">
+</p></details></li></ul><ul id="12f21824-7781-4260-b16e-d1422b78367d" class="toggle"><li><details open=""><summary><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>La chute de la maison Plantagenêt</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></summary><p id="362aa090-ee16-4f05-9efd-0d678a60f5bd" class="">
+</p></details></li></ul><ul id="8dc4e823-873f-4190-8532-d1c273a4b306" class="toggle"><li><details open=""><summary><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>L’autonomie du roi vis-à-vis du pape</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></summary></details></li></ul><ul id="aac8a961-32c3-44cb-aa48-cc309c6a49ea" class="toggle"><li><details open=""><summary><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Le jeudi de Muret et le dimanche de Bouvines</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></summary></details></li></ul><ul id="106481ea-d5d1-4e81-9695-bcb6a6b38fc1" class="toggle"><li><details open=""><summary><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>La monarchie dans sa plénitude : la fin du règne et ses prolongements</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></summary></details></li></ul><ul id="8a9a856b-c501-437d-aa04-8f16eb0550e9" class="toggle"><li><details open=""><summary></summary></details></li></ul></details></li></ul><p id="c94d5edc-ba49-409e-a297-0759b73ffb85" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
